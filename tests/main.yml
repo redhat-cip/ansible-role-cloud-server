@@ -1,0 +1,14 @@
+---
+- hosts: localhost
+  tasks:
+    - name: Create server
+      include_role:
+        name: ansible-role-cloud-server
+      vars:
+        ansible_cloud_provider: "{{ lookup('env', 'ANSIBLE_CLOUD_PROVIDER') }}"
+        name: 'ansiblecloud-testvm'
+        os: '{{ cloud_server_os }}'
+        plan: '{{ cloud_server_flavor }}'
+        region: '{{ cloud_server_region }}'
+        ssh_key: '{{ cloud_server_sshkey }}'
+        firewall_group: '{{ cloud_server_security_group }}'

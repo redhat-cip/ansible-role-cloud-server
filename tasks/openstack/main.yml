@@ -1,0 +1,16 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+#
+# (c) 2018, Ricardo Carrillo Cruz <ricarril@redhat.com>
+# (c) 2018, Yanis Guenane <yguenane@redhat.com>
+# GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
+
+---
+- name: Create server
+  os_server:
+    name: '{{ cloud_server_name }}'
+    image: '{{ cloud_server_image }}'
+    flavor: '{{ cloud_server_flavor }}'
+    availability_zone: '{{ cloud_server_region }}'
+    key_name: '{{ cloud_server_sshkey }}'
+    security_groups: '{{ cloud_server_security_group }}'
