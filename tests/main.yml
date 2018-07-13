@@ -12,3 +12,16 @@
         cloud_server_region: ''
         cloud_server_sshkey: ''
         cloud_server_security_group: ''
+
+    - name: Delete server
+      include_role:
+        name: ansible-role-cloud-server
+      vars:
+        ansible_cloud_provider: "{{ lookup('env', 'ANSIBLE_CLOUD_PROVIDER') }}"
+        cloud_server_name: 'ansiblecloud-testvm'
+        cloud_server_image: ''
+        cloud_server_flavor: ''
+        cloud_server_region: ''
+        cloud_server_sshkey: ''
+        cloud_server_security_group: ''
+        cloud_server_state: absent

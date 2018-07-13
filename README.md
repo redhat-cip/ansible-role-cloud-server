@@ -19,6 +19,7 @@ Please refer to [ansible-cloud](https://github.com/redhat-cip/ansible-cloud) [RE
 | cloud_server_region         | True      | N/A     | String | Name of the region              |
 | cloud_server_sshkey         | True      | N/A     | String | Name of the ssh keypair         |
 | cloud_server_security_group | True      | N/A     | String | Name of the sec group to attach |
+| cloud_server_state          | False     | present | String | Should the server be present    |
 
 
 ## Example

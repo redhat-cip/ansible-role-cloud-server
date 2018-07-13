@@ -7,3 +7,4 @@
     region: '{{ cloud_server_region }}'
     ssh_key: '{{ cloud_server_sshkey }}'
     firewall_group: '{{ cloud_server_security_group }}'
+    state: '{{ cloud_server_state|default("present") }}'
