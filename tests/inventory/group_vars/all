@@ -1,0 +1,6 @@
+ansible_host: localhost
+ansible_connection: local
+
+cloud_server_name: 'ansiblecloud-testvm'
+cloud_server_sshkey: 'ansiblecloud-testsshkey'
+cloud_server_security_group: 'ansiblecloud-testsecuritygroup'
