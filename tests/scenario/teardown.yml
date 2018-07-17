@@ -3,12 +3,10 @@
   include_role:
     name: cloud-sshkey
   vars:
-    cloud_sshkey_name: '{{ cloud_server_sshkey }}'
     cloud_sshkey_state: absent
 
 - name: Remove Security Group
   include_role:
     name: cloud-securitygroup
   vars:
-    cloud_securitygroup_name: '{{ cloud_server_security_group }}'
     cloud_securitygroup_state: absent

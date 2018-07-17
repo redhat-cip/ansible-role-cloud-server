@@ -17,6 +17,13 @@
       include_role:
         name: ansible-role-cloud-server
 
+    # NOTE(spredzy): Vultr require 5 minutes of uptime before one
+    #                can destroy a VM
+    - name: Wait for 5 minutes
+      pause:
+        minutes: 5
+      when: ansible_cloud_provider == 'vultr'
+
     - name: Delete server
       include_role:
         name: ansible-role-cloud-server
