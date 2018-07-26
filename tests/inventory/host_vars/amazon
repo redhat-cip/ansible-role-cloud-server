@@ -1,0 +1,7 @@
+region: eu-west-1
+
+cloud_server_image: ami-3548444c
+cloud_server_flavor: t2.micro
+cloud_server_region: '{{ region }}'
+cloud_sshkey_region: '{{ region }}'
+cloud_securitygroup_region: '{{ region }}'

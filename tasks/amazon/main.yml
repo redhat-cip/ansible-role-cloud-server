@@ -1,0 +1,10 @@
+---
+- name: Manage server
+  ec2_instance:
+    name: '{{ cloud_server_name }}'
+    key_name: '{{ cloud_server_sshkey }}'
+    instance_type: '{{ cloud_server_flavor }}'
+    security_group: '{{ cloud_server_security_group }}'
+    image_id: '{{ cloud_server_image }}'
+    region: '{{ cloud_server_region }}'
+    state: '{{ cloud_server_state|default("present") }}'
