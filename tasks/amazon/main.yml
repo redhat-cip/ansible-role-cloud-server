@@ -1,4 +1,17 @@
 ---
+- name: Retrieve vpc_subnet_id
+  ec2_vpc_subnet_facts:
+    region: '{{ cloud_server_region }}'
+    filters:
+      'tag:Name': '{{ cloud_server_network }}'
+  register: subnets
+  when: cloud_server_network is defined
+
+- name: Set vpc_subnet_id if exists
+  set_fact:
+    vpc_subnet_id: '{{ subnets.subnets[0].id }}'
+  when: cloud_server_network is defined
+
 - name: Manage server
   ec2_instance:
     name: '{{ cloud_server_name }}'
@@ -7,4 +20,5 @@
     security_group: '{{ cloud_server_security_group }}'
     image_id: '{{ cloud_server_image }}'
     region: '{{ cloud_server_region }}'
+    vpc_subnet_id: '{{ vpc_subnet_id|default(None) }}'
     state: '{{ cloud_server_state|default("present") }}'
