@@ -17,7 +17,7 @@
     name: '{{ cloud_server_name }}'
     key_name: '{{ cloud_server_sshkey }}'
     instance_type: '{{ cloud_server_flavor }}'
-    security_group: '{{ cloud_server_security_group }}'
+    security_groups: '{{ cloud_server_security_groups }}'
     image_id: '{{ cloud_server_image }}'
     region: '{{ cloud_server_region }}'
     vpc_subnet_id: '{{ vpc_subnet_id|default(None) }}'

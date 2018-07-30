@@ -11,15 +11,15 @@ Please refer to [ansible-cloud](https://github.com/redhat-cip/ansible-cloud) [RE
 
 ## Role Variables
 
-| Variable name               | Required  | Default | Type   | Description                     |
-|-----------------------------|-----------|---------|--------|---------------------------------|
-| cloud_server_name           | True      | N/A     | String | Name of the VM                  |
-| cloud_server_image          | True      | N/A     | String | Name of the image               |
-| cloud_server_flavor         | True      | N/A     | String | Name of the flavor              |
-| cloud_server_region         | True      | N/A     | String | Name of the region              |
-| cloud_server_sshkey         | True      | N/A     | String | Name of the ssh keypair         |
-| cloud_server_security_group | True      | N/A     | String | Name of the sec group to attach |
-| cloud_server_state          | False     | present | String | Should the server be present    |
+| Variable name                | Required  | Default | Type   | Description                      |
+|------------------------------|-----------|---------|--------|----------------------------------|
+| cloud_server_name            | True      | N/A     | String | Name of the VM                   |
+| cloud_server_image           | True      | N/A     | String | Name of the image                |
+| cloud_server_flavor          | True      | N/A     | String | Name of the flavor               |
+| cloud_server_region          | True      | N/A     | String | Name of the region               |
+| cloud_server_sshkey          | True      | N/A     | String | Name of the ssh keypair          |
+| cloud_server_security_groups | True      | N/A     | List   | List of the sec groups to attach |
+| cloud_server_state           | False     | present | String | Should the server be present     |
 
 
 ## Example
@@ -39,7 +39,8 @@ Please refer to [ansible-cloud](https://github.com/redhat-cip/ansible-cloud) [RE
         cloud_server_flavor: 1024 MB RAM,25 GB SSD,1.00 TB BW
         cloud_server_region: Amsterdam
         cloud_server_sshkey: ansiblecloud-testsshkey
-        cloud_server_security_group: ansiblecloud-testsecuritygroup
+        cloud_server_security_groups:
+          - ansiblecloud-testsecuritygroup
 ```
 
 

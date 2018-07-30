@@ -6,5 +6,5 @@
     plan: '{{ cloud_server_flavor }}'
     region: '{{ cloud_server_region }}'
     ssh_key: '{{ cloud_server_sshkey }}'
-    firewall_group: '{{ cloud_server_security_group }}'
+    firewall_group: '{{ cloud_server_security_groups|join(" ") }}'
     state: '{{ cloud_server_state|default("present") }}'

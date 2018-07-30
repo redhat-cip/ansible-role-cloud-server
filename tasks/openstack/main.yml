@@ -6,6 +6,6 @@
     flavor: '{{ cloud_server_flavor }}'
     availability_zone: '{{ cloud_server_region }}'
     key_name: '{{ cloud_server_sshkey }}'
-    security_groups: '{{ cloud_server_security_group }}'
+    security_groups: '{{ cloud_server_security_groups }}'
     network: '{{ cloud_server_network|default(None) }}'
     state: '{{ cloud_server_state|default("present") }}'
