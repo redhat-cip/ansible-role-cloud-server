@@ -1,15 +1,16 @@
 ---
-- name: Retrieve vpc_subnet_id
-  ec2_vpc_subnet_facts:
-    region: '{{ cloud_server_region }}'
-    filters:
-      'tag:Name': '{{ cloud_server_network }}'
-  register: subnets
-  when: cloud_server_network is defined
+- block:
+  - name: Retrieve vpc_subnet_id
+    ec2_vpc_subnet_facts:
+      region: '{{ cloud_server_region }}'
+      filters:
+        'tag:Name': '{{ cloud_server_network }}'
+    register: subnets
 
-- name: Set vpc_subnet_id if exists
-  set_fact:
-    vpc_subnet_id: '{{ subnets.subnets[0].id }}'
+  - name: Set vpc_subnet_id if exists
+    set_fact:
+      vpc_subnet_id: '{{ subnets.subnets[0].id }}'
+
   when: cloud_server_network is defined
 
 - name: Manage server
