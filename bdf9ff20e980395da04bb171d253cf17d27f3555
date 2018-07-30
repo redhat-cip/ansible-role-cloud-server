@@ -1,0 +1,8 @@
+Code-Review+2: Yanis Guenane <yguenane@gmail.com>
+Workflow+1: Yanis Guenane <yguenane@gmail.com>
+Verified+2: Zuul CI <zuul@softwarefactory-project.io>
+Submitted-by: Zuul CI <zuul@softwarefactory-project.io>
+Submitted-at: Mon, 30 Jul 2018 11:47:27 +0000
+Reviewed-on: https://softwarefactory-project.io/r/13222
+Project: ansible/ansible-role-cloud-server
+Branch: refs/heads/master
